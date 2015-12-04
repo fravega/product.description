@@ -1,0 +1,337 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	list-style: none;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	// background-color: darken(#FFF, 5%);
+}
+
+@import "grid.less";
+
+.icn() {
+	-moz-osx-font-smoothing: grayscale;
+	display: inline-block;
+	font-family: "Ionicons";
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1;
+	text-rendering: auto;
+	text-transform: none;
+}
+
+.warp {
+	max-width: 1000px;
+	min-width: 1000px;
+	margin: 0 auto;
+}
+
+header {
+	overflow: hidden;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	font-size: 80%;
+
+	hgroup {
+		.column(12);
+
+		h1,
+		h2 {
+		}
+
+		h1 {
+			width: 230px;
+			height: 40px;
+			font-size: 0;
+			line-height: 0;
+			background-image: url("//www.fravega.com/arquivos/logo-fravega.png");
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		h2 {
+			font-size: .7rem;
+			color: darken(#FFF, 50%);
+			text-indent: .5%;
+			line-height: 1;
+		}
+
+	}
+
+}
+
+div#menu {
+	width: 100%;
+	overflow: hidden;
+	background-color: #371F8F;
+
+	nav {
+		ul {
+			.column(12);
+
+			li {
+				height: 30px;
+				line-height: 30px;
+				background-color: #371F8F;
+				text-align: center;
+				color: #FFF;
+				float: left;
+				cursor: pointer;
+				padding: 0 3%;
+				margin: 0 1%;
+
+				&:before {
+					.icn();
+					margin-right: 10px;
+					content: "\f20a";
+				}
+
+				a {
+					color: #FFF;
+					text-decoration: none;
+				}
+
+			}
+
+			.active {
+				background-color: #AD006C;
+			}
+
+		}
+
+	}
+
+}
+
+nav#sub-menu {
+	.column(12);
+	border-bottom: 1px solid darken(#FFF, 15%);
+
+	ul {
+		li {
+			float: left;
+			height: 30px;
+			line-height: 30px;
+			background-color: darken(#FFF, 10%);
+			text-align: center;
+			color: darken(#FFF, 25%);
+			border-top-right-radius: 4px;
+			border-top-left-radius: 4px;
+			border: 1px solid darken(#FFF, 10%);
+			cursor: pointer;
+			padding: 0 2%;
+			margin: 0 .5%;
+			font-size: .8rem;
+		}
+
+		li[rel="descripcion"] {
+			&:before {
+				.icn();
+				margin-right: 10px;
+				content: "\f3b2";
+			}
+
+		}
+
+		li[rel="imagen"] {
+			&:before {
+				.icn();
+				margin-right: 10px;
+				content: "\f148";
+			}
+
+		}
+
+		li[rel="sonido"] {
+			&:before {
+				.icn();
+				margin-right: 10px;
+				content: "\f3b7";
+			}
+
+		}
+
+		li[rel="conectividad"] {
+			&:before {
+				.icn();
+				margin-right: 10px;
+				content: "\f25c";
+			}
+
+		}
+
+		li[rel="caracteristicas-especiales"] {
+			&:before {
+				.icn();
+				margin-right: 10px;
+				content: "\f2fc";
+			}
+
+		}
+
+		li[rel="dimensiones"] {
+			&:before {
+				.icn();
+				margin-right: 10px;
+				content: "\f264";
+			}
+
+		}
+
+		li[rel="html"] {
+			display: none;
+			&:before {
+				.icn();
+				margin-right: 10px;
+				content: "\f26f";
+			}
+
+		}
+
+		.active {
+			&:before {
+				color: #AD006C;
+			}
+
+		}
+
+	}
+
+}
+
+#televisores {
+	// border-radius: 4px;
+	// border: 1px solid darken(#FFF, 15%);
+	.column(12);
+	margin-top: 1%;
+	padding-bottom: 1.5%;
+
+	h3 {
+		.column(12);
+		height: 50px;
+		line-height: 50px;
+		font-size: 1.5rem;
+		text-indent: .5%;
+		color: #AD006C;
+
+		&:before {
+			.icn();
+			margin-right: 10px;
+			content: "\f465";
+		}
+
+	}
+
+	nav#sub-menu {
+		ul {
+			li.active {
+				background-color: #FFF;
+				border: 1px solid darken(#FFF, 15%);
+				border-bottom: 1px solid #FFF;
+				top: 1px;
+				position: relative;
+				color: #000;
+			}
+
+		}
+
+	}
+
+	section {
+		.column(12);
+		overflow: hidden;
+		border-bottom: 1px solid darken(#FFF, 15%);
+		border-left: 1px solid darken(#FFF, 15%);
+		border-right: 1px solid darken(#FFF, 15%);
+		padding-top: 1%;
+		padding-bottom: 1%;
+		background-color: #FFF;
+
+		div[rel="descripcion"] {
+			.column(12);
+			display: block;
+		}
+
+		div[rel="imagen"],
+		div[rel="sonido"],
+		div[rel="conectividad"],
+		div[rel="caracteristicas-especiales"],
+		div[rel="dimensiones"],
+		div[rel="html"] {
+			.column(12);
+			display: none;
+		}
+
+		div[rel="html"] {
+			textarea {
+				width: 100%;
+				max-width: 100%;
+				min-width: 100%;
+				height: 242px;
+				border: 1px solid #b6b6b6;
+				box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+			}
+
+		}
+
+		span#submit {
+			.column(12);
+			margin-top: 1%;
+
+			button#generar {
+				width: 150px;
+				height: 40px;
+				text-align: center;
+				border: none;
+				border-radius: 4px;
+				border-bottom: 3px solid darken(#008000, 10%);
+				font-size: .9rem;
+				color: #FFF;
+				text-transform: uppercase;
+				background-color: green;
+				cursor: pointer;
+
+				&:before {
+					.icn();
+					margin-right: 10px;
+					content: "\f358";
+				}
+
+			}
+
+			button#clean {
+				width: 150px;
+				height: 40px;
+				text-align: center;
+				border: none;
+				border-radius: 4px;
+				border-bottom: 3px solid darken(#FF0000, 10%);
+				font-size: .9rem;
+				color: #FFF;
+				text-transform: uppercase;
+				background-color: red;
+				cursor: pointer;
+
+				&:before {
+					.icn();
+					margin-right: 10px;
+					content: "\f37f";
+				}
+
+			}			
+
+		}
+
+	}
+
+}
